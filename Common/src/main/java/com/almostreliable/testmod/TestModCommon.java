@@ -20,8 +20,7 @@ public class TestModCommon {
 
     public static final CreativeModeTab TAB = MANAGER.tab("Testmod Items", () -> new ItemStack(Blocks.ANVIL));
 
-    public static final TagKey<Item> TEST_TAG = MANAGER.createItemTag("test_tag");
-
+    public static final TagKey<Item> TEST_TAG = AlmostLib.INSTANCE.createItemTag("dusts/coal");
 
     static {
         new ModBlocks();

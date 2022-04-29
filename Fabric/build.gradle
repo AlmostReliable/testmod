@@ -33,13 +33,24 @@ loom {
             server()
             setConfigName("Server")
         }
-        datagen {
+
+        fabricDatagen {
             client()
-            setConfigName("Datagen")
+            setConfigName("FabricDatagen")
+            property("almost.datagen.platform", "fabric")
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.modid=${mod_id}"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
+        }
+
+        commonDatagen {
+            client()
+            setConfigName("CommonDatagen")
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.modid=${mod_id}"
             vmArg "-Dfabric-api.datagen.output-dir=${file("../Common/src/generated/resources")}"
         }
+
         configureEach {
             runDir "run"
             ideConfigGenerated(true)

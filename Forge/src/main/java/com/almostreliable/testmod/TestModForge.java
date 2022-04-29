@@ -16,5 +16,9 @@ public class TestModForge {
         eventBus.addListener((RegisterGameTestsEvent event) -> {
             TestModGametests.init();
         });
+
+        eventBus.addListener((GatherDataEvent event) -> {
+            TestModCommon.MANAGER.registerDataGen(event.getGenerator());
+        });
     }
 }
