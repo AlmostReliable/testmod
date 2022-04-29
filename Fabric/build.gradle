@@ -13,6 +13,9 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":Common")
+
+
+    modImplementation("com.almostreliable.lib:AlmostLib-fabric-${minecraft_version}:${almostlib_version}")
 }
 
 loom {
@@ -35,7 +38,7 @@ loom {
             setConfigName("Datagen")
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.modid=${mod_id}"
-            vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("../Common/src/generated/resources")}"
         }
         configureEach {
             runDir "run"
