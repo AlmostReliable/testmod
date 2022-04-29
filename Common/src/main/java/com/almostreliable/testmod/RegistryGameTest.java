@@ -3,6 +3,9 @@ package com.almostreliable.testmod;
 import com.almostreliable.lib.AlmostLib;
 import com.almostreliable.lib.gametest.AlmostGameTest;
 import com.almostreliable.lib.registry.RegistryEntry;
+import com.almostreliable.testmod.registry.ModBlockEntities;
+import com.almostreliable.testmod.registry.ModBlocks;
+import com.almostreliable.testmod.registry.ModItems;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 
@@ -13,27 +16,27 @@ public class RegistryGameTest {
 
     @GameTest(template = EMPTY_STRUCTURE)
     public void dummyItemPresent(GameTestHelper helper) {
-        ifPresentCheck(helper, TestModCommon.DUMMY_ITEM);
+        ifPresentCheck(helper, ModItems.DUMMY_ITEM);
     }
 
     @GameTest(template = EMPTY_STRUCTURE)
     public void dummySwordPresent(GameTestHelper helper) {
-        ifPresentCheck(helper, TestModCommon.DUMMY_SWORD);
+        ifPresentCheck(helper, ModItems.DUMMY_SWORD);
     }
 
     @GameTest(template = EMPTY_STRUCTURE)
     public void dummyBlockPresent(GameTestHelper helper) {
-        ifPresentCheck(helper, TestModCommon.TEST_BLOCK);
+        ifPresentCheck(helper, ModBlocks.TEST_BLOCK);
     }
 
     @GameTest(template = EMPTY_STRUCTURE)
     public void dummyBlockLinkPresent(GameTestHelper helper) {
-        ifPresentCheck(helper, TestModCommon.TEST_BLOCK_ITEM);
+        ifPresentCheck(helper, ModItems.TEST_BLOCK_ITEM);
     }
 
     @GameTest(template = EMPTY_STRUCTURE)
     public void dummyEntityPresent(GameTestHelper helper) {
-        ifPresentCheck(helper, TestModCommon.TEST_BLOCK_ENTITY);
+        ifPresentCheck(helper, ModBlockEntities.TEST_BLOCK_ENTITY);
     }
 
     private void ifPresentCheck(GameTestHelper helper, RegistryEntry<?> registryEntry) {

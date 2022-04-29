@@ -1,11 +1,12 @@
 package com.almostreliable.testmod;
 
+import com.almostreliable.testmod.registry.ModMenus;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 
 public class TestMenu extends AbstractContainerMenu {
-    protected TestMenu(int id) {
-        super(TestModCommon.TEST_MENU.get(), id);
+    public TestMenu(int id) {
+        super(ModMenus.TEST_MENU.get(), id);
     }
 
     @Override
